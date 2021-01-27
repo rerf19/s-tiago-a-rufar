@@ -1,0 +1,42 @@
+.localizacaoTop{
+    -ms-transform: matrix(1, -0.025, 0, 1, 0, 0);
+    transform: matrix(1, -0.025  , 0, 1, 0, 0);
+    margin-top: -25px;
+    background: #e5e5e5;
+    
+    height: 120px;
+}
+.localizacaoTop .localizacaoTitle{
+    padding-left: 10%;
+}
+.localizacaoTop .localizacaoTitle h1{
+    font-size: 60px;
+}
+.localizacao{
+    margin-top: 30;
+}
+
+@media (min-width: 2350px){
+    .localizacaoTop{
+        -ms-transform: matrix(1, 0, 0, 1, 0,30);
+        transform: matrix(1, 0, 0, 1, 0,30);
+    }
+}
+
+@media (max-width: 520px){
+    .localizacaoTop{
+        text-align: center;
+        
+    }
+    .localizacaoTop .localizacaoTitle{
+        padding-left: 0;
+    }
+    .localizacaoTop .localizacaoTitle h1{
+        font-size: 60px;
+        float: none;
+    }
+    .localizacaoTop{
+        -ms-transform: matrix(1, 0, 0, 1, 0,30);
+        transform: matrix(1, 0, 0, 1, 0,30);
+    }
+}

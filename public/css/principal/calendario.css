@@ -1,0 +1,48 @@
+.calendarioTop{
+    -ms-transform: matrix(1, 0.025, 0, 1, 0,30);
+    transform: matrix(1, 0.025, 0, 1, 0,30);
+    background:rgb(65, 133, 218);
+    height: 120px;
+}
+.calendarioTop .calendarioTitle{
+    padding-right: 10%;
+}
+.calendarioTop .calendarioTitle h1{
+    font-size: 70px;
+    float: right;
+    padding-bottom: 5px;
+    color: #e5e5e5;
+}
+.calendario2{
+    background: rgb(65, 133, 218);
+    border: solid 1px transparent;
+}
+.calendario{
+    margin-top: 60px;
+    margin-bottom: 55px;
+    background:rgb(65, 133, 218);
+}
+@media (min-width: 2350px){
+    .calendarioTop{
+        -ms-transform: matrix(1, 0, 0, 1, 0,30);
+        transform: matrix(1, 0, 0, 1, 0,30);
+    }
+}
+
+@media (max-width: 520px){
+    .calendarioTop .calendarioTitle h1{
+        font-size: 60px;
+        float: none;
+        color: #e5e5e5;
+    }
+    .calendarioTop{
+        -ms-transform: matrix(1, 0, 0, 1, 0,30);
+        transform: matrix(1, 0, 0, 1, 0,30);
+    }
+    .calendarioTop{
+        text-align: center;
+    }
+    .calendarioTop .calendarioTitle{
+        padding-right: 0;
+    }
+}

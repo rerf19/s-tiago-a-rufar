@@ -1,0 +1,115 @@
+.modalConteinerR{
+    font-family: 'Poppins',sans-serif;
+    height: 450px;
+    background: #fff;
+}
+
+.modalConteinerR .modalLeftR{
+    float: left;
+    width: 50%;
+    height: 760px;
+    background: url(../../img/principal/navImage2.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.modalConteinerR .modalRightR{
+    float: right;
+    width: 50%;
+    height: 760px;
+    box-sizing: border-box;
+}
+
+.modalFormBoxR{
+    width: 100%;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    height: 760px;
+    background: #fff;
+}
+
+.modalFormBoxR p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color:#024;
+}
+
+.modalFormBoxR input,
+.modalFormBoxR select{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.modalFormBoxR input[type="text"],
+.modalFormBoxR input[type="password"],
+.modalFormBoxR input[type="email"],
+.modalFormBoxR select{
+    border: none;
+    border-bottom: #024 solid 2px;
+    outline: none;
+    height: 35px;
+}
+.modalFormBoxR input[type="text"]:focus,
+.modalFormBoxR input[type="password"]:focus,
+.modalFormBoxR input[type="email"]:focus,
+.modalFormBoxR select:focus{
+    border-bottom: #8fbc8f solid 2px;
+}
+
+.modalFormBoxR input[type="submit"]{
+    border: noden;
+    outline: none;
+    height: 45px;
+    color: #fff;
+    background: #8fbc8f;
+    cursor: pointer;
+}
+.modalFormBoxR input[type="submit"]:hover{
+    background: #024;
+}
+
+.modalFormBoxR a{
+    color: #8fbc8f;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.modalFormBoxR .olho2{
+    width: 7%;
+    float: right;
+    height: 16px;
+    position: relative;
+    top: 30px;
+}
+
+.modalFormBoxR .olho2 i{
+    float: right;
+}
+
+.modalFormBoxR .olho3{
+    width: 7%;
+    float: right;
+    height: 16px;
+    position: relative;
+    top: 30px;
+}
+
+.modalFormBoxR .olho3 i{
+    float: right;
+}
+
+@media (max-width: 993px){
+    .modalConteinerR .modalLeftR{
+        float: left;
+        width: 0%;
+        height: 730px;
+        box-sizing: border-box;
+    }
+    .modalConteinerR .modalRightR{
+        float: right;
+        width: 100%;
+        height: 730px;
+        box-sizing: border-box;
+    }
+}

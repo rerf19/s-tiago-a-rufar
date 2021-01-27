@@ -1,0 +1,42 @@
+.contactosTop{
+    -ms-transform: matrix(1, -0.025, 0, 1, 0, 0);
+    transform: matrix(1, -0.025  , 0, 1, 0, 0);
+    margin-top: -25px;
+    background: #e5e5e5;
+    
+    height: 120px;
+}
+.contactosTop .contactosTitle{
+    padding-left: 10%;
+}
+.contactosTop .contactosTitle h1{
+    font-size: 60px;
+}
+.contactos{
+    margin-top: 30;
+}
+
+@media (min-width: 2350px){
+    .contactosTop{
+        -ms-transform: matrix(1, 0, 0, 1, 0,30);
+        transform: matrix(1, 0, 0, 1, 0,30);
+    }
+}
+
+@media (max-width: 520px){
+    .contactosTop{
+        text-align: center;
+        
+    }
+    .contactosTop .contactosTitle{
+        padding-left: 0;
+    }
+    .contactosTop .contactosTitle h1{
+        font-size: 60px;
+        float: none;
+    }
+    .contactosTop{
+        -ms-transform: matrix(1, 0, 0, 1, 0,30);
+        transform: matrix(1, 0, 0, 1, 0,30);
+    }
+}
