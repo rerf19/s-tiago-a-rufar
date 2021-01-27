@@ -1,0 +1,144 @@
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>STR|Editar User</title>
+  <link rel="stylesheet" href="../../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../assets/vendors/iconfonts/ionicons/css/ionicons.css">
+  <link rel="stylesheet" href="../../assets/vendors/iconfonts/typicons/src/font/typicons.css">
+  <link rel="stylesheet" href="../../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="../../assets/css/shared/style.css">
+  <link rel="stylesheet" href="../../assets/css/demo_1/style.css">
+  <link rel="icon" href="/img/principal/logo.jpg" type="image/jpg">
+  <link rel="stylesheet" href="../../../../assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../public/css/user/galeria/galeria.css">
+</head>
+<body>
+  <div class="container-scroller">
+    <% include user/_navbar2.ejs %>
+    <div class="container-fluid page-body-wrapper">
+      <% include user/_sidebar2.ejs %>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row page-title-header">
+            <div class="col-12">
+              <div class="page-header">
+                <h2 class="page-title">Editar Evento</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">Editar Evento</h4>
+                          <form method="POST" action="/admin/calendario/editar" class="forms-sample">
+                            <input type="text" name="idCalendario" value="<%=evento[0].idCalendario%>" hidden>
+                            <div class="row">
+                                <div class="col-xl-6">
+                                  <div class="form-group">
+                                    <label>Titulo</label>
+                                    <input type="text" class="form-control" name="titulo" required value="<%=evento[0].title%>">
+                                  </div>
+                                </div>
+                                <div class="col-xl-6">
+                                  <div class="form-group">
+                                    <label>Cor</label>
+                                    <select class="form-control" name="cor" required>
+                                      <option value="<%=evento[0].color%>">
+                                        <%if(evento[0].color == "#33cc10"){%><%="Verde"%><%}%>
+                                        <%if(evento[0].color == "#1071cc"){%><%="Azul"%><%}%>
+                                        <%if(evento[0].color == "#cc1010"){%><%="Vermelho"%><%}%>
+                                        <%if(evento[0].color == "#cc7110"){%><%="Laranja"%><%}%>
+                                      </option>
+                                      <option value="#33cc10">Verde</option>
+                                      <option value="#1071cc">Azul</option>
+                                      <option value="#cc1010">Vermelho</option>
+                                      <option value="#cc7110">Laranja</option>
+                                    </select>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xl-6">
+                                <div class="form-group">
+                                  <label><strong>Inicio</strong></label>
+                                </div>
+                                <div class="form-group">
+                                  <label>Data</label>
+                                  <input type="date" name="inicioData" class="form-control" value="<%=evento[0].inicioData%>">
+                                </div>
+                                <div class="form-group">
+                                  <label>Hora</label>
+                                  <input type="time" name="inicioHora" class="form-control" value="<%=evento[0].inicioHora%>">
+                                </div>
+                              </div>
+                              <div class="col-xl-6">
+                                <div class="form-group">
+                                  <label><strong>Fim</strong></label>
+                                </div>
+                                <div class="form-group">
+                                  <label>Data</label>
+                                  <input type="date" name="fimData" class="form-control" value="<%=evento[0].fimData%>">
+                                </div>
+                                <div class="form-group">
+                                  <label>Hora</label>
+                                  <input type="time" name="fimHora" class="form-control" value="<%=evento[0].fimHora%>">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xl-12">
+                                <div class="form-group">
+                                  <label>Visisel Para:</label>
+                                  <select name="priv" class="form-control">
+                                    <option value="<%=evento[0].privilegio%>">
+                                        <%if(evento[0].privilegio == '0'){%><%="Membros"%><%}%>
+                                        <%if(evento[0].privilegio == '1'){%><%="Todos"%><%}%>
+                                    </option>
+                                    <option value="0">Membros</option>
+                                    <option value="1">Todos</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <button type="submit" class="btn btn-success mr-2">Alterar</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="../../assets/vendors/js/vendor.bundle.addons.js"></script>
+  <script src="../../assets/js/shared/off-canvas.js"></script>
+  <script src="../../assets/js/shared/misc.js"></script>
+  <script src="../../assets/js/demo_1/dashboard.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script>
+    $( document ).ready(function() {
+      $("body").removeClass("purchase-banner-active");
+      $(".item-purchase-banner").hide();
+      $("#hiddenShow").click(function(){
+          $("#userFoto").toggle(1000);
+      });
+    });
+    var imgPerfil2 = document.getElementById('imgPerfil2');
+    var imgPerfil3 = document.getElementById('imgPerfil3');
+    var imgPerfil4 = document.getElementById('imgPerfil4');
+    function addFoto(){
+      if(imgPerfil2.src == "../../imagens/perfil/"){
+        imgPerfil2.src = imgPerfil2.src + "default-user.png";
+        imgPerfil3.src = imgPerfil3.src + "default-user.png";
+        imgPerfil4.src = imgPerfil4.src + "default-user.png";
+      }
+    }
+    addFoto();
+  </script>
+</body>
+</html>

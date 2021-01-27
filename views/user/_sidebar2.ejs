@@ -1,0 +1,52 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item nav-profile">
+      <a href="#" class="nav-link">
+        <div class="profile-image">
+          <img class="img-xs rounded-circle" src="../../imagens/perfil/<%=user.imagem%>" id="imgPerfil4" alt="profile image">
+        </div>
+        <div class="text-wrapper">
+          <p class="profile-name"><%= user.primeiroNome %> <%= user.ultimoNome %></p>
+          <p class="designation"><% if(user.privilegio == '0') { %> <%= 'Membro' %> <% } %> <% if(user.privilegio == '1') { %> <%= 'Adminstrador' %> <% } %></p>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item nav-category">Menu</li>
+    <%if(user.privilegio >= 0){%>
+      <% menu.forEach(menu => { %>
+        <li class="nav-item">
+          <a class="nav-link" href="<%=menu.link%>">
+            <i class="menu-icon typcn typcn-document-text"></i>
+            <span class="menu-title"><%=menu.nome%></span>
+          </a>
+        </li>
+      <% }) %>
+    <%}%>
+    <li class="nav-item">
+      <%if(user.privilegio >= 1){%>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <i class="menu-icon typcn typcn-document-add"></i>
+            <span class="menu-title">Dashboard</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="auth">
+            <ul class="nav flex-column sub-menu">
+              <% menuAdmin.forEach(menu => { %>
+                <li class="nav-item">
+                  <a class="nav-link" href="<%=menu.link%>"><%=menu.nome%></a>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+        </li>
+      <%}%>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../../user/logout">
+        <i class="menu-icon typcn typcn-document-text"></i>
+        <span class="menu-title">Terminar Sessão</span>
+      </a>
+    </li>
+  </ul>
+</nav>

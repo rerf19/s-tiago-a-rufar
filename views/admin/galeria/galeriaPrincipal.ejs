@@ -1,0 +1,90 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Galeria Principal</h4>
+      <form action="/admin/galeria/options" method="POST">
+        <div class="row">
+          <div class="col-xl-2">
+            <button type="submit" class="btn btn-primary" name="rebaixar" style="margin-top: 23px;">Rebaixar</button>
+            <button type="submit" class="btn btn-danger" name="eliminar" style="margin-top: 23px;">Eliminar</button>
+          </div>
+          <div class="col-xl-10">
+            <div class="form-group">
+              <label>Procurar</label>
+              <input class="form-control" id="input1" type="text" placeholder="Search..">
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive" style="max-height: 350px;">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Selecionar</th>
+                <th scope="col">Imagem</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Data</th>
+                <th scope="col">Utilizador</th>
+                <th scope="col">Opções</th>
+              </tr>
+            </thead>
+            <tbody id="tabela1">
+              <% galeria.forEach(imagem =>{%>
+                <%if(imagem.privilegio == 1 && imagem.tipo != 'video/mp4'){%>
+                  <tr>
+                    <td class="py-4"> <input type="checkbox" value="<%=imagem.idImagens %>" class="check-input" name="check"></td>
+                    <td>
+                      <img src="../imagens/galeria/<%= imagem.nome %>" class="img-fluid" style="border-radius: 0% !important;height: 65px !important;width: auto !important;">
+                    </td>
+                    <td><%=imagem.nome%></td>
+                    <td><%=imagem.tipo%></td>
+                    <td><%=imagem.data%></td>
+                    <td><%=imagem.primeiroNome%> <%=imagem.ultimoNome%></td>
+                    <td>
+                      <a href="/admin/galeria/rebaixar/<%=imagem.idImagens%>"><button type="button" class="btn btn-primary">Rebaixar</button></a>
+                      <a onclick="elim(this)" href="/admin/galeria/eliminar/<%=imagem.idImagens%>"><button type="button" class="btn btn-danger">Eliminar</button></a>
+                    </td>
+                  </tr>
+                <%}%>
+              <%})%>
+            </tbody>
+          </table>
+          <table class="table table-striped" style="margin-top: 20px;">
+            <thead>
+              <tr>
+                <th scope="col">Selecionar</th>
+                <th scope="col">Video</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Data</th>
+                <th scope="col">Utilizador</th>
+                <th scope="col">Opções</th>
+              </tr>
+            </thead>
+            <tbody id="tabela1">
+              <% galeria.forEach(video =>{%>
+                <%if(video.privilegio == 1 && video.tipo == 'video/mp4'){%>
+                  <tr>
+                    <td class="py-4"> <input type="checkbox" value="<%=video.idImagens %>" name="check"></td>
+                    <td>
+                      <video id="video"   style="margin: auto;width: 130px;max-height: 73px;" controls>
+                        <source  src="../imagens/galeria/<%= video.nome %>" type="video/mp4">
+                        Your browser does not support HTML video.
+                      </video>
+                    </td>
+                    <td><%=video.nome%></td>
+                    <td><%=video.tipo%></td>
+                    <td><%=video.data%></td>
+                    <td><%=video.primeiroNome%> <%=video.ultimoNome%></td>
+                    <td>
+                      <a href="/admin/galeria/rebaixar/<%=video.idImagens%>"><button type="button" class="btn btn-primary">Rebaixar</button></a>
+                      <a href="/admin/galeria/eliminar/<%=video.idImagens%>"><button type="button" class="btn btn-danger">Eliminar</button></a>
+                    </td>
+                  </tr>
+                <%}%>
+              <%})%>
+            </tbody>
+          </table>
+        </div>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Entradas</h4>
+      <div class="col-xl-12">
+        <div class="form-group">
+            <label>Procurar</label>
+            <input class="form-control" id="input2" type="text" placeholder="Search..">
+        </div>
+      </div>
+      <div class="table-responsive" style="max-height: 320px;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Hora</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody id="tabela2">
+            <% logins.forEach(login => { %>
+              <tr>
+                  <td><%= login.primeiroNome%> <%= login.ultimoNome%></td>
+                  <td><%= login.email%></td>
+                  <td><%= login.hora%></td>
+                  <td><%= login.data%></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

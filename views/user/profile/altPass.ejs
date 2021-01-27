@@ -1,0 +1,26 @@
+  <div class="col-xl-12 d-flex align-items-stretch grid-margin">
+    <div class="row flex-grow">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title"><i class="fa fa-refresh"></i>&nbsp;&nbsp;Alterar Password</h4>
+            <form class="forms-sample" method="POST" action="/user/altPass">
+              <div class="form-group">
+                <label>Password Antiga</label>
+                <input type="password" class="form-control" name="passAnt" required>
+              </div>
+              <div class="form-group">
+                <label>Password Nova</label>
+                <input type="password" class="form-control" name="passNova" required>
+              </div>
+              <input type="text" value="<%= user.pass %>" hidden name="password">
+              <input type="text" value="<%= user.idUtilizadores %>" hidden name="idUtilizadores">
+              <button type="submit" class="btn btn-success mr-2">Alterar</button>
+              <label style="color:red;"><%if(fAltPass){%> <%=fAltPass%> <%}%></label>
+              <label style="color:green;"><%if(sAltPass){%> <%=sAltPass%> <%}%></label>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

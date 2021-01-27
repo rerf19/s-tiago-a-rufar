@@ -1,0 +1,38 @@
+<div class="card grid-margin">
+    <div class="card-body">
+      <h4 class="card-title">Eventos</h4>
+      <div class="col-12">
+          <div class="form-group">
+            <label>Procurar</label>
+            <input class="form-control" id="input1" type="text" placeholder="Search..">
+          </div>
+      </div>
+      <div class="table-responsive" style="max-height: 450px;">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <td>Titulo</td>
+              <td>Cor</td>
+              <td>Inicio</td>
+              <td>Fim</td>
+              <td>Opções</td>
+            </tr>
+          </thead>
+          <tbody id="tabela1">
+            <%calendario.forEach(evento => { %>
+              <tr>
+                <td><%=evento.title%></td>
+                <td><input type="color" value="<%=evento.color%>" disabled></td>
+                <td><%=evento.start%></td>
+                <td><%=evento.end%></td>
+                <td>
+                  <a href="/admin/calendario/<%=evento.idCalendario%>"><button type="button" class="btn btn-primary">Editar</button></a>
+                  <a onclick="elim(this)" data-toggle="modal" data-target="#modalElim"  href="/admin/calendario/eliminar/<%= evento.idCalendario %>"><button type="button" class="btn btn-danger">Eliminar</button></a>
+                </td>
+              </tr>
+            <%})%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

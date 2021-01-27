@@ -1,0 +1,27 @@
+<div class="modal fade" id="modalLogin">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" >
+        <div class="modalConteiner">
+            <div class="modalLeft"></div>
+            <div class="modalRight">
+                <button type="button" id="closeLogin" class="close" style="margin-bottom: 0;margin-top: 7%;margin-right: 7%;" data-dismiss="modal">&times;</button>
+                <div class="modalFormBox">
+                    <form action="/login" method="POST">
+                        <p style="margin-bottom: 16px;">Email</p>
+                        <input type="text" name="loginEmail" placeholder="Email" required>
+                        <p>Password</p>
+                            <div class="olho1">
+                                &nbsp;
+                                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                            </div>
+                        <input class="senha1" type="password" minlength="1" name="loginPassword" placeholder="Password" required>
+                        <input type="submit" name="loginSubmit" value="Login">
+                    </form>
+                    <a href="#"  data-target="#modalPassword" data-toggle="modal">Esqueceu da password?</a><br>
+                    <a href="#"  data-target="#modalRegistar" data-toggle="modal">Ainda não tem conta?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

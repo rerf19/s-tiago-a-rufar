@@ -1,0 +1,126 @@
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>STR|Calendário</title>
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/ionicons/css/ionicons.css">
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/typicons/src/font/typicons.css">
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="../assets/css/shared/style.css">
+  <link rel="stylesheet" href="../assets/css/demo_1/style.css">
+  <link rel="icon" href="/img/principal/logo.jpg" type="image/jpg">
+  <link rel="stylesheet" href="../../../assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css">
+  <!--Calendar-->
+  <link href='../packages/core/main.css' rel='stylesheet' />
+  <link href='../packages/daygrid/main.css' rel='stylesheet' />
+  <link href='../packages/timegrid/main.css' rel='stylesheet' />
+  <link href='../packages/list/main.css' rel='stylesheet' />
+  <script src='../packages/core/main.js'></script>
+  <script src='../packages/core/locales-all.js'></script>
+  <script src='../packages/interaction/main.js'></script>
+  <script src='../packages/daygrid/main.js'></script>
+  <script src='../packages/timegrid/main.js'></script>
+  <script src='../packages/list/main.js'></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: ['interaction', 'dayGrid', 'timeGrid', 'list' ],
+        header: {
+          left: 'prevYear,prev,next,nextYear today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+        },
+        eventLimit: true,
+        businessHours: true,
+        weekNumbers: true,
+        weekNumbersWithinDays: true,
+        locale: 'pt',
+        editable: false,
+        events:<%-JSON.stringify(calendario) %>,
+        eventTextColor: 'white',
+        extraParams: function() {
+          return {
+            cachebuster: new Date().valueOf()
+          };
+        }
+      });
+      calendar.render();
+    });
+  
+  </script>
+  <style>
+    .item-purchase-banner{
+      display: none;
+    }
+    #calendar {
+      min-width: 900px;
+      max-width: 1100px;
+      margin: 0 auto;
+      box-sizing: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-scroller">
+    <% include user/_navbar.ejs %>
+    <div class="container-fluid page-body-wrapper">
+      <% include user/_sidebar.ejs %>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row page-title-header">
+            <div class="col-12">
+              <div class="page-header">
+                <h2 class="page-title">Calendário</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="table-responsive-xl">
+                    <table class="table">
+                      <tr>
+                        <td>
+                          <div id="calendar"></div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+  <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="../assets/vendors/js/vendor.bundle.addons.js"></script>
+  <script src="../assets/js/shared/off-canvas.js"></script>
+  <script src="../assets/js/shared/misc.js"></script>
+  <script src="../assets/js/demo_1/dashboard.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script>
+    $( document ).ready(function() {
+      $("body").removeClass("purchase-banner-active");
+      $(".item-purchase-banner").hide();
+    });
+    var imgPerfil2 = document.getElementById('imgPerfil2');
+    var imgPerfil3 = document.getElementById('imgPerfil3');
+    var imgPerfil4 = document.getElementById('imgPerfil4');
+    function addFoto(){
+      if(imgPerfil2.src == "../imagens/perfil/"){
+        imgPerfil2.src = imgPerfil2.src + "default-user.png";
+        imgPerfil3.src = imgPerfil3.src + "default-user.png";
+        imgPerfil4.src = imgPerfil4.src + "default-user.png";
+      }
+    }
+    addFoto();
+  </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>STR|ADMIN USERS</title>
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/ionicons/css/ionicons.css">
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/typicons/src/font/typicons.css">
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="../assets/css/shared/style.css">
+  <link rel="stylesheet" href="../assets/css/demo_1/style.css">
+  <link rel="stylesheet" href="../assets/vendors/iconfonts/font-awesome/css/font-awesome.min.css">
+  <link rel="icon" href="/img/principal/logo.jpg" type="image/jpg">
+</head>
+<style>
+    .content-wrapper{
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+    }
+    .container-fluid{
+        width: 100% !important;
+    } 
+    .page-body-wrapper{
+        width: 100% !important;
+    }
+    .container-scroller{
+        width: 100% !important;
+    }
+    #images{
+        -ms-transform: matrix(1, 0.025, 0, 1, 0,30);
+        transform: matrix(1, 0.025, 0, 1, 0,30);
+    }
+    #videos{
+        -ms-transform: matrix(1, 0.025, 0, 1, 0,30);
+        transform: matrix(1, 0.025, 0, 1, 0,30);
+    }
+    #rowGaleria{
+    padding-bottom: 50px;
+    }
+    .imagemGaleria{
+        height: 300px !important;
+        width: auto !important;
+        max-width: 100% !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        display: block !important;
+        margin-top: 20px !important;
+    }
+    #myImg {
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #myImg:hover {opacity: 0.7;}
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      padding-top: 100px; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgb(0,0,0); 
+      background-color: rgba(0,0,0,0.9); 
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 100%;
+      max-width: 1000px;
+    }
+    .modal-content, #caption {
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+    @keyframes zoom {
+      from {transform:scale(0)}
+      to {transform:scale(1)}
+    }
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    @media only screen and (max-width: 700px){
+      .modal-content {
+        width: 100%;
+      }
+    }
+</style>
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper">
+        <div class="content-wrapper">
+            <div class="pagTras" style="width: 60px;height: 60px;position: fixed;background: rgb(65, 218, 73);left: 50px;top: 50px;z-index: 1;text-align: center;border-radius: 10px;">
+                <a href="/" style="text-decoration: none;color: black;"><i class="fa fa-arrow-circle-left fa-3x" style="padding-top:6px" aria-hidden="true"></i></a>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h1 style="text-align: center !important;font-size: 90px !important;"><strong>GALERIA</strong></h1>
+                </div>
+            </div>
+            <div class="row" id="images" style="width: 100% !important;margin: 0 !important;padding: 0 !important;margin-top: 40px !important;">
+                <div class="col-12" style="padding: 0 !important;margin: 0 !important; width: 100% !important;">
+                    <h1 style="text-align: center !important;font-size: 70px !important;background: rgb(65, 133, 218) !important;padding: 0 !important;"><strong>IMAGENS</strong><a href="#videos" style="text-decoration: none;color: white;"><label style="font-size: 15px;">videos</label></a></h1>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 100px;">
+                <div class="col-lg-12">
+                    <div class="row" id="rowGaleria">
+                        <%galeria.forEach(imagem =>{ %>
+                            <%if(imagem.tipo != 'video/mp4'){ %>
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/<%= imagem.nome %>"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+                            <%}%>
+                        <%})%>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="videos" style="width: 100% !important;margin: 0 !important;padding: 0 !important;margin-top: 40px !important;">
+                <div class="col-12" style="padding: 0 !important;margin: 0 !important; width: 100% !important;">
+                    <h1 style="text-align: center !important;font-size: 70px !important;background: rgb(65, 133, 218) !important;padding: 0 !important;"><strong>VIDEOS</strong><a href="#images" style="text-decoration: none;color: white;"><label style="font-size: 15px;">imagens</label></a></h1>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 100px;">
+                <div class="col-lg-12">
+                    <div class="row" id="rowGaleria">
+                        <% galeria.forEach(video => { %>
+                            <%if(video.tipo == 'video/mp4'){ %>
+                                <div class="col-xl-6">
+                                <div class="row" id="rowVideo" style="margin-bottom: 20px;">
+                                    <video id="video"   style="margin: auto;width: 60%;max-height: 250px;max-height: 250px;" controls>
+                                    <source  src="../imagens/galeria/<%= video.nome %>" type="video/mp4">
+                                    Your browser does not support HTML video.
+                                    </video>
+                                </div>
+                                </div>
+                            <%}%>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+  </div>
+  <!--Modal para o imagem-->
+  <div id="myModal" class="modal" style="z-index: 100000;">
+    <span class="close" style="margin-top: 50px;">&times;</span>
+    <img class="modal-content" id="img01" >
+    <div id="caption"></div>
+  </div>
+  <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="../assets/vendors/js/vendor.bundle.addons.js"></script>
+  <script src="../assets/js/shared/off-canvas.js"></script>
+  <script src="../assets/js/shared/misc.js"></script>
+  <script src="../assets/js/demo_1/dashboard.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script>
+    $( document ).ready(function() {
+      $("body").removeClass("purchase-banner-active");
+      $(".item-purchase-banner").hide();
+    });
+    var modal = document.getElementById('myModal');
+    var modalImg = document.getElementById('img01');
+    var captionText = document.getElementById("caption");
+    function myFunc(el){
+        var ImgSrc = el.src;
+        modal.style.display = "block";
+        modalImg.src = ImgSrc;
+        captionText.innerHTML = el.alt;
+    }
+    window.onclick = (event) => {
+        if(event.target == modal){
+            modal.style.display = 'none';
+    }
+    }
+    modalImg.onclick = (event) => {
+        if(event.target != modal){
+            modal.style.display = 'none';
+        }
+    }
+    var span = document.getElementsByClassName('close')[0];
+        span.onclick = () => {
+        modal.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

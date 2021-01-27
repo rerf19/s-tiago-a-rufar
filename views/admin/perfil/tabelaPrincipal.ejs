@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-body">
+          <h4 class="card-title">Utilizadores</h4>
+          <div class="col-xl-12">
+              <div class="form-group">
+                  <label>Procurar</label>
+                  <input class="form-control" id="input1" type="text" placeholder="Search..">
+              </div>
+          </div>
+          <div class="table-responsive" style="max-height: 400px;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Data de Nascimento</th>
+                        <th>Genero</th>
+                        <th>Morada</th>
+                        <th>Residencia</th>
+                        <th>Contacto</th>
+                        <th>Contacto Mãe</th>
+                        <th>Contacto Pai</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela1">
+                    <% users.forEach(user => { %>
+                    <%if(user.privilegio >= 0){%>
+                        <tr>
+                            <td class="py-2"><img src="../imagens/perfil/<%=user.imagem%>" class alt=""></td>
+                            <td><%= user.primeiroNome%> <%= user.ultimoNome%></td>
+                            <td><%= user.email%></td>
+                            <td><%= user.dataNascimento %></td>
+                        <td><%if(user.genero == 'mas'){%> <%='Masculino'%><%}if(user.genero == 'fem'){%><%='Feminino'%><%}if(user.genero == 'outro'){%><%='Outro'%><%}%></td>
+                            <td><%= user.morada %></td>
+                            <td><%= user.residencia %></td>
+                            <td><%= user.contacto %></td>
+                            <td><%= user.contactoMae %></td>
+                            <td><%= user.contactoPai %></td>
+                            <td>
+                                <a href="/admin/perfil/<%= user.idUtilizadores %>"><button type="button" class="btn btn-<%if(user.privilegio == "1"){%><%="dark"%><%}else{%><%="primary"%><%}%>">Editar</button></a>
+                                <a onclick="elim(this)" data-toggle="modal" data-target="#modalElim"  href="/admin/perfil/eliminar/<%=user.idUtilizadores%>"><button type="button" class="btn btn-danger">Eliminar</button></a>
+                            </td>
+                        </tr>
+                    <%}%>
+                    <% }) %>
+                </tbody>
+            </table>
+          </div>
+    </div>
+</div>

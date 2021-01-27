@@ -1,0 +1,60 @@
+<div class="col-xl-8 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"><i class="fa fa-address-card"></i>&nbsp;&nbsp;Informções Pessoais</h4>
+        <form class="forms-sample" action="/user/infPessoal" method="POST">
+          <input type="text" value="<%=user.idUtilizadores%>" name="idUtilizadores" hidden>
+          <div class="form-group">
+            <label>Primeiro Nome</label>
+            <input type="text" class="form-control" value="<%= user.primeiroNome %>" name="primeiroNome">
+          </div>
+          <div class="form-group">
+            <label>Ultimo Nome</label>
+            <input type="text" class="form-control" value="<%= user.ultimoNome %>" name="ultimoNome">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" value="<%= user.email %>" name="email">
+          </div>
+          <div class="form-group">
+            <label>Gênero</label>
+            <select class="form-control" name="genero">
+              <option value="<%= user.genero %>"><%if(user.genero == 'mas'){%>  <%= 'Masculino' %>  <%}if(user.genero == 'fem'){%> <%='Feminino'%> <%}if(user.genero == 'outro'){%><%='Outro'%><%}%> </option>
+              <option value="mas">Masculino</option>
+              <option value="fem">Feminino</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Data de Nascimento</label>
+            <input type="date" class="form-control" value="<%= user.dataNascimento %>" name="dataNascimento">
+          </div>
+          <div class="form-group">
+            <label>Residência</label>
+            <input type="text" class="form-control" placeholder="ex: Lobão/Sanguedo" value="<%= user.residencia %>" name="residencia">
+          </div>
+          <div class="form-group">
+            <label>Morada</label>
+            <input type="text" class="form-control" placeholder="ex: Rua do Testo  nº12345  0000-000" value="<%= user.morada %>" name="morada">
+          </div>
+          <div class="form-group">
+            <label>Contacto</label>
+            <input type="text" class="form-control" placeholder="ex: 123456789" value="<%= user.contacto %>" name="contacto">
+          </div>
+          <div class="form-group">
+            <label>Contacto Pai</label>
+            <input type="text" class="form-control" placeholder="ex: 123456789" value="<%= user.contactoPai %>" name="contactoPai">
+          </div>
+          <div class="form-group">
+            <label>Contacto Mae</label>
+            <input type="text" class="form-control" placeholder="ex: 123456789" value="<%= user.contactoMae %>" name="contactoMae">
+          </div>
+          <div class="form-group">
+            <label>Contacto Casa</label>
+            <input type="text" class="form-control" placeholder="ex: 213456789" value="<%= user.contactoCasa %>" name="contactoCasa">
+          </div>
+          <button type="submit" class="btn btn-success mr-2">Alterar</button>
+        </form>
+      </div>
+    </div>
+  </div>

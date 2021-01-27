@@ -1,0 +1,68 @@
+<div class="card grid-margin">
+    <div class="card-body">
+      <h4 class="card-title">Novo Evento</h4>
+      <form action="/admin/calendario/adicionar" class="forms-sample" method="POST">
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="form-group">
+              <label>Titulo</label>
+              <input type="text" class="form-control" value="" name="titulo" required>
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="form-group">
+              <label>Cor</label>
+              <select class="form-control" name="cor" required>
+                <option value=""></option>
+                <option value="#33cc10">Verde</option>
+                <option value="#1071cc">Azul</option>
+                <option value="#cc1010">Vermelho</option>
+                <option value="#cc7110">Laranja</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-6">
+            <div class="form-group">
+              <label><strong>Inicio</strong></label>
+            </div>
+            <div class="form-group">
+              <label>Data</label>
+              <input type="date" name="inicioData" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Hora</label>
+              <input type="time" name="inicioHora" class="form-control">
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="form-group">
+              <label><strong>Fim</strong></label>
+            </div>
+            <div class="form-group">
+              <label>Data</label>
+              <input type="date" name="fimData" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Hora</label>
+              <input type="time" name="fimHora" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="form-group">
+              <label>Visisel Para:</label>
+              <select name="priv" class="form-control" required>
+                <option value=""></option>
+                <option value="0">Membros</option>
+                <option value="1">Todos</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success mr-2">Adiconar</button>
+      </form>
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+<div class="col-xl">
+    <div class="card">
+      <div class="card-body">
+        <div class="wrapper">
+          <h3 class="mb-0 font-weight-semibold">
+            <% imgP.forEach(numero => { %>
+              <%= numero.count %>
+            <%})%>
+          </h3>
+          <h5 class="mb-0 font-weight-medium text-primary">Imagens Principal</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl">
+    <div class="card">
+      <div class="card-body">
+        <div class="wrapper">
+          <h3 class="mb-0 font-weight-semibold">
+            <% vidP.forEach(numero => { %>
+              <%= numero.count %>
+            <%})%>
+          </h3>
+          <h5 class="mb-0 font-weight-medium text-primary">Videos Principal</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl">
+    <div class="card">
+      <div class="card-body">
+        <div class="wrapper">
+          <h3 class="mb-0 font-weight-semibold">
+            <% img.forEach(numero => { %>
+              <%= numero.count %>
+            <%})%>
+          </h3>
+          <h5 class="mb-0 font-weight-medium text-primary">Imagens Total</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl">
+    <div class="card">
+      <div class="card-body">
+        <div class="wrapper">
+          <h3 class="mb-0 font-weight-semibold">
+            <% vid.forEach(numero => { %>
+              <%= numero.count %>
+            <%})%>
+          </h3>
+          <h5 class="mb-0 font-weight-medium text-primary">Videos Total</h5>
+        </div>
+      </div>
+    </div>
+  </div>

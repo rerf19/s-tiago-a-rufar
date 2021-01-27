@@ -1,0 +1,57 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Todas as Fotografias</h4>
+      <div class="row">
+        <div class="col-xl-4 grid-margin"> <!--Pesquisar pelo Nome-->
+          <div class="card">
+            <div class="card-body" style="height: 250px !important;">
+              <h4 class="card-title">Pesquisar Por Pessoa</h4>
+              <form action="/user/galeria/pesqNome" method="GET" class="forms-sample">
+                <div class="form-group">
+                  <label>Nome:</label>
+                  <select class="form-control" name="id" class="form-control">
+                    <option value="">Escolher Nome..</option>
+                    <% utilizadores.forEach(users => { %>
+                      <option value="<%= users.idUtilizadores %>"><%=users.primeiroNome%> <%=users.ultimoNome%></option>
+                    <% }) %>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-success mr-2">Procurar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 grid-margin"> <!--Pesquisar pela Data-->
+          <div class="card">
+            <div class="card-body" style="height: 250px !important;">
+              <h4 class="card-title">Pesquisa Por Data</h4>
+              <form action="/user/galeria/pesqData" method="GET" class="forms-sample">
+                <div class="form-group">
+                  <label>Entre:</label>
+                  <input type="date" name="data1" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>E:</label>
+                  <input type="date" name="data2" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success mr-2">Procurar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 grid-margin">
+          <div class="card">
+            <div class="card-body" style="height: 250px !important;">
+              <h4 class="card-title">Pesquisa Todas</h4>
+              <form action="/user/galeria/pesqToda" class="forms-sample" method="GET">
+                <div class="form-group">
+                  <label>Pesquisar Todas as Imagems</label>
+                </div>
+                <button type="submit" class="btn btn-success mr-2">Procurar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

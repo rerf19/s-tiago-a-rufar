@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">As Tuas Fotografias e Videos &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <i style="text-decoration:underline;cursor: pointer;" id="hiddenShow">Mostrar/Ocultar</i></h4>
+    <div id="userFoto" style="display: none;">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card grid-margin">
+            <div class="card-body">
+              <h4 class="card-title">Fotografias</h4>
+              <div class="row">
+                <% userFoto.forEach(imagem => { %>
+                  <div class="col-xl-4">
+                    <div class="row">
+                      <img src="../imagens/galeria/<%= imagem.nome %>" alt="<%= imagem.data%>&nbsp;<%=imagem.primeiroNome%>&nbsp;<%=imagem.ultimoNome%>" onclick="myFunc(this)"
+                      style="
+                      height: 140px !important;
+                      width: auto !important;
+                      max-width: 100% !important;
+                      margin-right: auto !important;
+                      margin-left: auto !important;
+                      display: block !important;">
+                    </div>
+                    <div class="row">
+                      <button type="button" class="btn btn-danger" style="margin: auto;margin-top: 10px;margin-bottom: 10px;">
+                        <a onclick="elim(this)" href="/user/galeria/eliminar/<%= imagem.idImagens %>" style="text-decoration: none;color: white;" data-toggle="modal" data-target="#modalElim" >Eliminar</a></button>
+                    </div>
+                  </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card grid-margin">
+            <div class="card-body">
+              <h4 class="card-title">Videos</h4>
+              <div class="row">
+                <% userVideos.forEach(video => { %>
+                  <div class="col-xl-6">
+                    <div class="row" id="rowVideo">
+                      <video id="video"   style="margin: auto;width: 80%;max-height: 250px;max-height: 250px;" controls>
+                        <source  src="../imagens/galeria/<%= video.nome %>" type="video/mp4">
+                        Your browser does not support HTML video.
+                      </video>
+                    </div>
+                    <div class="row" style="margin:auto;">
+                      <button type="button" class="btn btn-danger" style="margin: auto;margin-top: 10px;margin-bottom: 10px;">
+                        <a onclick="elim(this)" href="/user/galeria/eliminar/<%= video.idImagens %>" style="text-decoration: none;color: white;" data-toggle="modal" data-target="#modalElim" >Eliminar</a></button>
+                    </div>
+                  </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

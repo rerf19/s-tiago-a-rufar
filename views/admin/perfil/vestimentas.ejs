@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Vestimenta</h4>
+        <div class="col-xl-12">
+            <div class="form-group">
+                <label>Procurar</label>
+                <input class="form-control" id="input3" type="text" placeholder="Search..">
+            </div>
+          </div>
+        <div class="table-responsive" style="max-height: 400px;">
+            <table class="table table-stiped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tamanho da Camisola</th>
+                        <th>Tamanho do Calçado</th>
+                        <th>Traje Mediaval</th>
+                        <th>Traje Romano</th>
+                        <th>Sandalias</th>
+                        <th>Botas</th>
+                        <th>Polo</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela3">
+                    <% users.forEach(user => { %>
+                      <%if(user.privilegio >= 0){%>
+                      <tr>
+                          <td><%= user.primeiroNome%> <%= user.ultimoNome%></td>
+                          <td><%= user.tamanhoCamisola%></td>
+                          <td><%= user.tamanhoCalcado %></td>
+                          <td><%if(user.trajeMediaval == 1){%> <%='Sim'%><%}if(user.trajeMediaval == 0){%><%='Não'%><%}%></td>
+                          <td><%if(user.trajeRomano == 1){%> <%='Sim'%><%}if(user.trajeRomano == 0){%><%='Não'%><%}%></td>
+                          <td><%if(user.sandalias == 1){%> <%='Sim'%><%}if(user.sandalias == 0){%><%='Não'%><%}%></td>
+                          <td><%if(user.botas == 1){%> <%='Sim'%><%}if(user.botas == 0){%><%='Não'%><%}%></td>
+                          <td><%if(user.polo == 1){%> <%='Sim'%><%}if(user.polo == 0){%><%='Não'%><%}%></td>
+                          <td><a href="/admin/perfil/<%= user.idUtilizadores%>"><button type="button" class="btn btn-primary">Editar</button</a></td>
+                      </tr>
+                    <%}%>
+                  <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

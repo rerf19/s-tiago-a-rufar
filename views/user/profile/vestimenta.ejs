@@ -1,0 +1,117 @@
+<div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"><i class="fa fa-suitcase"></i>&nbsp;&nbsp;Vestimenta</h4>
+        <form class="forms-sample" action="/user/vestimenta" method="POST">
+          <input type="text" value="<%=user.idUtilizadores%>" name="idUtilizadores" hidden>
+          <div class="row">
+            <div class="col-md-3 grid-margin">
+              <div class="card">
+                <div class="card-body"  style="height: 150px !important;">
+                  <div class="form-group">
+                    <label>Tamanho Camisola</label>
+                      <select class="form-control" name="tamanhoCamisola" style="margin-top: 30px;">
+                        <option value="<%= user.tamanhoCamisola %>"><%= user.tamanhoCamisola %></option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                      </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin">
+              <div class="card">
+                <div class="card-body" style="height: 150px !important;">
+                  <div class="form-group">
+                    <label>Tamanho Calçado</label>
+                    <input type="number" name="tamanhoCalcado" class="form-control" value="<%= user.tamanhoCalcado %>" style="margin-top: 30px;" max="50" min="30">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin">
+              <div class="card">
+                <div class="card-body"  style="height: 150px !important;">
+                  <div class="form-group">
+                    <label>Sandálias</label>
+                    <div class="form-group">
+                      <div style="margin-top:15px;" onclick="sandalias()">
+                        <input type="checkbox" name="sandalias" id="sandalias" <%if(user.sandalias == '1' ){%><%='checked'%><%}%> value="1">
+                      </div>
+                      <input type="checkbox" name="sandalias" checked hidden value='0' id="sandalias2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin">
+              <div class="card">
+                <div class="card-body" style="height: 150px !important;">
+                  <div class="form-group">
+                    <label>Botas</label>
+                    <div class="form-group">
+                      <div style="margin-top:15px;" onclick="botas()">
+                        <input type="checkbox" name="botas" id="botas" <%if(user.botas == '1' ){%><%='checked'%><%}%> value="1">
+                      </div>
+                      <input type="checkbox" name="botas" checked hidden value='0' id="botas2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 grid-margin">
+              <div class="card">
+                <div class="card-body" style="height: 150px !important;">
+                  <div class="form-group">
+                    <label>Polo</label>
+                    <div class="form-group">
+                      <div style="margin-top:15px;" onclick="polo()">
+                        <input type="checkbox" name="polo" id="polo" <%if(user.polo == '1' ){%><%='checked'%><%}%> value="1">
+                      </div>
+                      <input type="checkbox" name="polo" checked hidden value='0' id="polo2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin">
+              <div class="card">
+                <div class="card-body" style="height: 150px !important;">
+                  <div class="form-group">
+                    <label>Traje Mediaval</label>
+                    <div class="form-group">
+                      <div style="margin-top:15px;" onclick="trajeMediaval()">
+                        <input type="checkbox" name="trajeMediaval" id="trajeMediaval" <%if(user.trajeMediaval == '1' ){%><%='checked'%><%}%> value="1">
+                      </div>
+                      <input type="checkbox" name="trajeMediaval" checked hidden value='0' id="trajeMediaval2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 grid-margin">
+              <div class="card">
+                <div class="card-body" style="height: 150px !important;">
+                  <div class="form-group">
+                    <label>Traje Romano</label>
+                    <div class="form-group">
+                      <div style="margin-top:15px;" onclick="trajeRomano()">
+                        <input type="checkbox" name="trajeRomano" id="trajeRomano" <%if(user.trajeRomano == '1' ){%><%='checked'%><%}%> value="1">
+                      </div>
+                      <input type="checkbox" name="trajeRomano" checked hidden value='0' id="trajeRomano2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success mr-2">Alterar</button>
+        </form>
+      </div>
+    </div>
+  </div>
