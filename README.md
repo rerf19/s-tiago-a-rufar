@@ -1,2 +1,3 @@
-# s-tiago-a-rufar
-My middle school final project
+# Sao Tiago a Rufar - My College/High School Final Project
+
+https://www.markdownguide.org/basic-syntax/
