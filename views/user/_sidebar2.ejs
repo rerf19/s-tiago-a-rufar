@@ -3,10 +3,10 @@
     <li class="nav-item nav-profile">
       <a href="#" class="nav-link">
         <div class="profile-image">
-          <img class="img-xs rounded-circle" src="../../imagens/perfil/<%=user.imagem%>" id="imgPerfil4" alt="profile image">
+          <img class="img-xs rounded-circle" src="../../imagens/perfil/default-user.png" id="imgPerfil4" alt="profile image">
         </div>
         <div class="text-wrapper">
-          <p class="profile-name"><%= user.primeiroNome %> <%= user.ultimoNome %></p>
+          <p class="profile-name">User</p>
           <p class="designation"><% if(user.privilegio == '0') { %> <%= 'Membro' %> <% } %> <% if(user.privilegio == '1') { %> <%= 'Adminstrador' %> <% } %></p>
         </div>
       </a>

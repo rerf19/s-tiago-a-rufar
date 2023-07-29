@@ -17,9 +17,9 @@
 </head>
 <body>
   <div class="container-scroller">
-    <% include user/_navbar.ejs %>
+    <%- include('user/_navbar.ejs') %>
     <div class="container-fluid page-body-wrapper">
-      <% include user/_sidebar.ejs %>
+      <%- include ('user/_sidebar.ejs') %>
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row page-title-header"> 
@@ -31,19 +31,19 @@
           </div>
           <div class="row">
             <!-- INFORMACOES -->
-            <%include user/profile/info.ejs %>
+            <%- include ('user/profile/info.ejs') %>
             <!-- IMAGEM DE PERFIL -->
             <div class="col-xl-4">
               <div class="row">
-                <%include user/profile/altFoto.ejs %>
+                <%- include ('user/profile/altFoto.ejs') %>
                 <!--Alterar Password-->
-                <% include user/profile/altPass.ejs %>
+                <%- include ('user/profile/altPass.ejs') %>
               </div>
             </div>
           </div>
           <!-- VESTIMENTA -->
           <div class="row">
-            <% include user/profile/vestimenta.ejs %>
+            <%- include ('user/profile/vestimenta.ejs') %>
           </div>
         </div>
       </div>

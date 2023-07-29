@@ -13,11 +13,11 @@
                 <label>Password Nova</label>
                 <input type="password" class="form-control" name="passNova" required>
               </div>
-              <input type="text" value="<%= user.pass %>" hidden name="password">
-              <input type="text" value="<%= user.idUtilizadores %>" hidden name="idUtilizadores">
+              <input type="text" value="admin" hidden name="password">
+              <input type="text" value="1" hidden name="idUtilizadores">
               <button type="submit" class="btn btn-success mr-2">Alterar</button>
-              <label style="color:red;"><%if(fAltPass){%> <%=fAltPass%> <%}%></label>
-              <label style="color:green;"><%if(sAltPass){%> <%=sAltPass%> <%}%></label>
+              <label style="color:red;"><%#if(fAltPass){%> <%#=fAltPass%> <%#}%></label>
+              <label style="color:green;"><%#if(sAltPass){%> <%#=sAltPass%> <%#}%></label>
             </form>
           </div>
         </div>

@@ -11,12 +11,12 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
         <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-          <img class="img-xs rounded-circle " src="../imagens/perfil/<%=user.imagem%>" id="imgPerfil2" alt="Profile image"></a>
+          <img class="img-xs rounded-circle " src="../imagens/perfil/default-user.png"<%#= user.imagem%> id="imgPerfil2" alt="Profile image"></a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
           <div class="dropdown-header text-center">
-            <img class="img-lg rounded-circle" src="../imagens/perfil/<%=user.imagem%>" id="imgPerfil3" alt="Profile image">
-            <p class="mb-1 mt-3 font-weight-semibold"><%= user.primeiroNome %> <%= user.ultimoNome %></p>
-            <p class="font-weight-light text-muted mb-0"><%= user.email %></p>
+            <img class="img-lg rounded-circle" src="../imagens/perfil/default-user.png"<%# user.imagem%> id="imgPerfil3" alt="Profile image">
+            <p class="mb-1 mt-3 font-weight-semibold"><%#= user.primeiroNome %> <%# user.ultimoNome %> User 1</p>
+            <p class="font-weight-light text-muted mb-0"><%#= user.email %> email@email.com</p>
           </div>
           <a class="dropdown-item" href="/user/perfil">Meu Perfil<i class="dropdown-item-icon ti-dashboard"></i></a>
           <a class="dropdown-item" href="/user/logout">Terminar Sessão<i class="dropdown-item-icon ti-power-off"></i></a>

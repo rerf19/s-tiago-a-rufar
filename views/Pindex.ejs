@@ -36,60 +36,60 @@
     <script src='/packages/list/main.js'></script>
     <script src="js/principal/calendario.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: ['interaction', 'dayGrid', 'timeGrid', 'list' ],
-      header: {
-        left: 'prev,next',
-        center: 'title',
-        right: 'dayGridMonth,listMonth'
-      },
-      eventLimit: true,
-      businessHours: true,
-      weekNumbers: true,
-      weekNumbersWithinDays: true,
-      locale: 'pt',
-      editable: false,
-      events: <%-JSON.stringify(calendario) %>,
-      eventTextColor: 'white',
-      extraParams: function() {
-        return {
-          cachebuster: new Date().valueOf()
-        };
-      }
-    });
-    calendar.render();
-});
+    //     document.addEventListener('DOMContentLoaded', function() {
+    // var calendarEl = document.getElementById('calendar');
+    // var calendar = new FullCalendar.Calendar(calendarEl, {
+    //   plugins: ['interaction', 'dayGrid', 'timeGrid', 'list' ],
+    //   header: {
+    //     left: 'prev,next',
+    //     center: 'title',
+    //     right: 'dayGridMonth,listMonth'
+    //   },
+    //   eventLimit: true,
+    //   businessHours: true,
+    //   weekNumbers: true,
+    //   weekNumbersWithinDays: true,
+    //   locale: 'pt',
+    //   editable: false,
+    //   events: ,
+    //   eventTextColor: 'white',
+    //   extraParams: function() {
+    //     return {
+    //       cachebuster: new Date().valueOf()
+    //     };
+    //   }
+    // });
+    // calendar.render();
+//});
     </script>
     <style>
-        #calendar{
-            min-width: 900px;
-            max-width: 1100px;
-            margin: 0 auto;
-            box-sizing: inherit;
-        }
+      #calendar{
+          min-width: 900px;
+          max-width: 1100px;
+          margin: 0 auto;
+          box-sizing: inherit;
+      }
     </style>
 </head>
 <body>
 
 <!-- NAV -->
-<% include mainPage/nav.ejs %>
+<%- include ('mainPage/nav') %>
 <!-- / -->
-<% include mainPage/sobre.ejs %>
-<% include mainPage/galeria.ejs %>
-<% include mainPage/localizacao.ejs%>
-<% include mainPage/calendario.ejs %>
-<% include mainPage/contactos.ejs%>
-<% include mainPage/endPage.ejs %>
+<%-include ('mainPage/sobre') %>
+<%- include ('mainPage/galeria') %>
+<%- include ('mainPage/localizacao')%>
+<%- include ('mainPage/calendario') %>
+<%- include ('mainPage/contactos')%>
+<%- include ('mainPage/endPage') %>
 <!-- MODAL LOGIN -->
-<% include mainPage/modalLogin.ejs %>
+<%- include ('mainPage/modalLogin') %>
 <!-- MODAL REGISTAR -->
-<% include mainPage/modalRegistar.ejs %>
+<%- include ('mainPage/modalRegistar') %>
 <!-- MODAL RECUPERAR PASSWORD-->
-<% include mainPage/modalPassword.ejs%>
+<%- include ('mainPage/modalPassword')%>
 
-<% include mainPage/caixasDialogo.ejs %>
+<%- include ('mainPage/caixasDialogo') %>
 <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="js/principal/nav.js"></script>

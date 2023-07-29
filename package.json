@@ -24,6 +24,7 @@
 		"timeago.js": "^4.0.2"
 	},
 	"devDependencies": {
+		"ejs-lint": "^2.0.0",
 		"prettier": "^1.19.1"
 	},
 	"browser": {

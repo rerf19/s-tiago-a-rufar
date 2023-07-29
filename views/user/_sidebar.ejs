@@ -3,24 +3,24 @@
     <li class="nav-item nav-profile">
       <a href="#" class="nav-link">
         <div class="profile-image">
-          <img class="img-xs rounded-circle" src="../imagens/perfil/<%=user.imagem%>" id="imgPerfil4" alt="profile image">
+          <img class="img-xs rounded-circle" src="../imagens/perfil/default-user.png" id="imgPerfil4" alt="profile image">
         </div>
         <div class="text-wrapper">
-          <p class="profile-name"><%= user.primeiroNome %> <%= user.ultimoNome %></p>
-          <p class="designation"><% if(user.privilegio == '0') { %> <%= 'Membro' %> <% } %> <% if(user.privilegio == '1') { %> <%= 'Adminstrador' %> <% } %></p>
+          <p class="profile-name">User</p>
+          <p class="designation"><%# if(user.privilegio == '0') { %> <%# 'Membro' %> <%# } %> <%# if(user.privilegio == '1') { %> <%# 'Adminstrador' %> <%# } %></p>
         </div>
       </a>
     </li>
     <li class="nav-item nav-category">Menu</li>
-    <% menu.forEach(menu => { %>
+    <%# menu.forEach(menu => { %>
       <li class="nav-item">
-        <a class="nav-link" href="<%=menu.link%>">
+        <a class="nav-link" href="<%#= menu.link%>">
           <i class="menu-icon typcn typcn-document-text"></i>
           <span class="menu-title"><%=menu.nome%></span>
         </a>
       </li>
-    <% }) %>
-    <%if(user.privilegio >= 1){%>
+    <%# }) %>
+    <%# if(user.privilegio >= 1){%>
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
           <i class="menu-icon typcn typcn-document-add"></i>
@@ -29,15 +29,15 @@
         </a>
         <div class="collapse" id="auth">
           <ul class="nav flex-column sub-menu">
-            <% menuAdmin.forEach(menu => { %>
+            <%# menuAdmin.forEach(menu => { %>
               <li class="nav-item">
-                <a class="nav-link" href="<%=menu.link%>"><%=menu.nome%></a>
+                <a class="nav-link" href="<%#=menu.link%>"><%#=menu.nome%></a>
               </li>
-            <% }) %>
+            <%# }) %>
           </ul>
         </div>
       </li>
-    <%}%>
+    <%#}%>
     
     <li class="nav-item">
       <a class="nav-link" href="/user/logout">

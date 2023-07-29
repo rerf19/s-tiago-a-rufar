@@ -6,7 +6,7 @@
             <h4 class="card-title"><i class="fa fa-file-image-o"></i>&nbsp;&nbsp;Imagem De Perfil</h4>
             <div class="row" style="margin: auto;">
               <div class="avatar rounded-circle" style="width: 200px;height: 200px;overflow: hidden;margin: auto;">
-                <img src="../imagens/perfil/<%=user.imagem%>" id="imgPerfil" alt="Circle Image" id="perfilImagem" class="img-raised img-fluid" style="width: 200px;height: auto;">
+                <img src="../imagens/perfil/default-user.png" id="imgPerfil" alt="Circle Image" id="perfilImagem" class="img-raised img-fluid" style="width: 200px;height: auto;">
               </div>
             </div>
             <form class="forms-sample" method="POST" action="../user/altFoto" enctype="multipart/form-data" style="margin-top: 30px;">
@@ -18,7 +18,7 @@
                 </div>
               </div>
               <button type="submit" class="btn btn-success mr-2">Alterar</button>
-              <label style="color:red;"><%if(fAltFoto){%> <%=fAltFoto%> <%}%></label>
+              <label style="color:red;"><%#if(fAltFoto){%> <%#=fAltFoto%> <%#}%></label>
             </form>
           </div>
         </div>
