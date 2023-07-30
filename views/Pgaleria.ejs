@@ -123,13 +123,52 @@
             <div class="row" style="margin-top: 100px;">
                 <div class="col-lg-12">
                     <div class="row" id="rowGaleria">
-                        <%galeria.forEach(imagem =>{ %>
-                            <%if(imagem.tipo != 'video/mp4'){ %>
+                        <!-- <%# galeria.forEach(imagem =>{ %> -->
+                            <%# if(imagem.tipo != 'video/mp4'){ %>
                                 <div class="col-lg-4" id="colGaleria">
-                                    <img  src="/imagens/galeria/<%= imagem.nome %>"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                    <img  src="/imagens/galeria/1592912903999.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
                                 </div>
-                            <%}%>
-                        <%})%>
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/1592912904013.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/1592912904040.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/1592912904074.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/1592912904006.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/1592912904017.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/1592912904045.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/1592912904076.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/1592912904008.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/1592912904027.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+
+                                <div class="col-lg-4" id="colGaleria">
+                                    <img  src="/imagens/galeria/1592912904067.jpg"  class="card-img-top imagemGaleria" onclick="myFunc(this)">
+                                </div>
+                            <%# }%>
+                        <%#})%>
                     </div>
                 </div>
             </div>
@@ -141,18 +180,18 @@
             <div class="row" style="margin-top: 100px;">
                 <div class="col-lg-12">
                     <div class="row" id="rowGaleria">
-                        <% galeria.forEach(video => { %>
-                            <%if(video.tipo == 'video/mp4'){ %>
+                        <%# galeria.forEach(video => { %>
+                            <%#if(video.tipo == 'video/mp4'){ %>
                                 <div class="col-xl-6">
                                 <div class="row" id="rowVideo" style="margin-bottom: 20px;">
                                     <video id="video"   style="margin: auto;width: 60%;max-height: 250px;max-height: 250px;" controls>
-                                    <source  src="../imagens/galeria/<%= video.nome %>" type="video/mp4">
+                                    <!-- <source  src="../imagens/galeria/<%#= video.nome %>" type="video/mp4"> -->
                                     Your browser does not support HTML video.
                                     </video>
                                 </div>
                                 </div>
-                            <%}%>
-                        <% }) %>
+                            <%#}%>
+                        <%# }) %>
                     </div>
                 </div>
             </div>

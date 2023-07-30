@@ -32,10 +32,10 @@ app.use(express.static(__dirname + '/public'));                                 
 // 	//store: new MYSQLStore(database)
 // }));
 
-app.use(flash());
+//app.use(flash());
 //app.use(morgan('tiny'))
-app.use(helmet());
-app.use(helmet.permittedCrossDomainPolicies());
+//app.use(helmet());
+//app.use(helmet.permittedCrossDomainPolicies());
 //app.use(helmet.noCache());
 // app.use(
 // 	helmet.featurePolicy({
