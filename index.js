@@ -36,19 +36,19 @@ app.use(flash());
 //app.use(morgan('tiny'))
 app.use(helmet());
 app.use(helmet.permittedCrossDomainPolicies());
-app.use(helmet.noCache());
-app.use(
-	helmet.featurePolicy({
-		features : {
-			fullscreen    : [ "'none'" ],
-			vibrate       : [ "'none'" ],
-			syncXhr       : [ "'none'" ],
-			microphone    : [ "'none'" ],
-			accelerometer : [ "'none'" ],
-			camera        : [ "'none'" ]
-		}
-	})
-);
+//app.use(helmet.noCache());
+// app.use(
+// 	helmet.featurePolicy({
+// 		features : {
+// 			fullscreen    : [ "'none'" ],
+// 			vibrate       : [ "'none'" ],
+// 			syncXhr       : [ "'none'" ],
+// 			microphone    : [ "'none'" ],
+// 			accelerometer : [ "'none'" ],
+// 			camera        : [ "'none'" ]
+// 		}
+// 	})
+// );
 app.use(bodyParser.urlencoded({extended: false}));
 //app.use(passport.initialize());
 //app.use(passport.session());
