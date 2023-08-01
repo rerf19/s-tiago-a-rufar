@@ -80,7 +80,7 @@ app.get('*', (req,res) => {
 
 //ABRIR O SERVIDOR
 app.listen(app.get('port'), () => {
-	console.log('Server running on port',app.get('port'))
-	console.log('http://localhost:3000');
+	// console.log('Server running on port',app.get('port'))
+	// console.log('http://localhost:3000');
 	console.log('Developer:',app.get('Name'));
 });
