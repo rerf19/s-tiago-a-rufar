@@ -22,6 +22,3 @@ Try it on the link that shows up on the side of this repository.
 Give a ⭐️ if this project helped you! <br>
 <a href="https://www.buymeacoffee.com/rerf19" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-## License
-
-A short snippet describing the license ([MIT](http://opensource.org/licenses/mit-license.php), [Apache](http://opensource.org/licenses/Apache-2.0), etc.)
